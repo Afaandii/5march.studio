@@ -33,17 +33,6 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto w-full max-w-7xl">
         <div className="flex flex-col items-center text-center">
-          {/* Availability Badge */}
-          <div className="animate-fade-in group mb-10 flex cursor-default items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-2.5 backdrop-blur-md transition-all hover:border-white/20 hover:bg-white/[0.06]">
-            <div className="relative flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></span>
-            </div>
-            <span className="text-sm font-semibold tracking-wide text-slate-300">
-              OPEN FOR PROJECTS IN 2026
-            </span>
-          </div>
-
           {/* Main Headline */}
           <h1
             className="animate-fade-in-up mb-8 max-w-5xl text-5xl font-black leading-[1.05] tracking-tight text-white sm:text-7xl md:text-8xl lg:text-[100px]"
