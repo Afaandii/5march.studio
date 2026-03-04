@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "5march.studio | Premier Web App Development Studio",
+  title: "5march.studio",
   description:
     "Elite digital craft for high-growth businesses. Membangun web app premium: Landing Page, E-Commerce, Sistem Pembayaran, dan Enterprise Solutions dengan desain modern glassmorphism.",
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "5march.studio" }],
   openGraph: {
-    title: "5march.studio | Premier Web App Development Studio",
+    title: "5march.studio",
     description:
       "Elite digital craft for high-growth businesses. Membangun masa depan digital Anda dengan presisi dan inovasi.",
     type: "website",

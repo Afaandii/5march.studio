@@ -1,18 +1,9 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { NAV_LINKS, SOCIAL_LINKS } from "@/lib/constants";
+import { NAV_LINKS } from "@/lib/constants";
 import { useScrollspy } from "@/hooks/useScrollspy";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
-import { FaGithub, FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-
-const SOCIAL_ICONS = {
-  github: FaGithub,
-  instagram: FaInstagram,
-  whatsapp: FaWhatsapp,
-  email: MdEmail,
-};
+import { HiMenuAlt3, HiX, HiPhone } from "react-icons/hi";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,30 +41,27 @@ export default function Navbar() {
   );
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-        isScrolled ? "glass-navbar py-3 shadow-2xl" : "py-6"
-      }`}
-    >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
+    <nav className="fixed top-0 left-0 right-0 z-[100] px-6 py-6">
+      <div
+        className={`mx-auto flex max-w-7xl items-center justify-between px-8 py-3 transition-all duration-500 rounded-[2rem] border border-white/10 ${
+          isScrolled
+            ? "bg-[#06060e]/70 backdrop-blur-2xl shadow-2xl"
+            : "bg-white/[0.03] backdrop-blur-md"
+        }`}
+      >
         {/* Logo */}
         <a
           href="#home"
           onClick={(e) => handleNavClick(e, "#home")}
           className="group flex items-center gap-3 text-xl font-bold"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-500 p-[1px] transition-transform duration-300 group-hover:scale-110">
-            <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-[#06060e] text-sm font-black text-white">
-              5m
-            </div>
-          </div>
-          <span className="text-white tracking-tight">
+          <span className="text-white tracking-tight hidden sm:block">
             5march<span className="gradient-text">.studio</span>
           </span>
         </a>
 
-        {/* Desktop Nav */}
-        <div className="hidden items-center gap-2 rounded-2xl border border-white/5 bg-white/[0.03] p-1.5 backdrop-blur-md md:flex">
+        {/* Desktop Nav - Centered */}
+        <div className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((link) => {
             const isActive = activeId === link.href.replace("#", "");
             return (
@@ -81,12 +69,13 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className={`relative rounded-xl px-5 py-2 text-sm font-medium transition-all duration-300 ${
-                  isActive
-                    ? "bg-white/10 text-white shadow-sm"
-                    : "text-slate-400 hover:text-slate-200 hover:bg-white/5"
+                className={`flex items-center gap-2 text-sm font-semibold transition-all duration-300 ${
+                  isActive ? "text-white" : "text-slate-400 hover:text-slate-200"
                 }`}
               >
+                {isActive && (
+                  <span className="h-1.5 w-1.5 rounded-full bg-white shadow-[0_0_8px_white]" />
+                )}
                 {link.label}
               </a>
             );
@@ -94,30 +83,13 @@ export default function Navbar() {
         </div>
 
         {/* CTA Desktop */}
-        <div className="hidden items-center gap-4 md:flex">
-          <div className="flex items-center gap-3 pr-4 border-r border-white/10">
-            {SOCIAL_LINKS.slice(0, 3).map((social) => {
-              const Icon = SOCIAL_ICONS[social.icon as keyof typeof SOCIAL_ICONS];
-              return (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-400 transition-colors hover:text-white"
-                  aria-label={social.label}
-                >
-                  <Icon size={18} />
-                </a>
-              );
-            })}
-          </div>
+        <div className="hidden items-center md:flex">
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, "#contact")}
-            className="btn-primary !px-6 !py-2.5 !text-sm"
+            className="flex items-center gap-2 rounded-full border border-blue-600 bg-blue-600 px-6 py-2.5 text-sm font-bold text-white transition-all hover:bg-blue-600/40 hover:border-blue-600/40"
           >
-            Mulai Proyek
+            Get Started
           </a>
         </div>
 
@@ -142,58 +114,38 @@ export default function Navbar() {
           onClick={() => setIsMobileOpen(false)}
         />
         <div
-          className={`absolute right-0 top-0 h-full w-4/5 max-w-sm border-l border-white/10 bg-[#06060e]/95 p-8 shadow-2xl transition-transform duration-500 ${
-            isMobileOpen ? "translate-x-0" : "translate-x-full"
+          className={`absolute right-4 top-24 w-[calc(100%-2rem)] max-w-sm rounded-3xl border border-white/10 bg-[#06060e]/95 p-8 shadow-2xl transition-all duration-500 ${
+            isMobileOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
           }`}
         >
-          <div className="flex flex-col gap-6 pt-12">
-            <div className="flex flex-col gap-2">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 ml-4">Menu</span>
-              {NAV_LINKS.map((link) => {
-                const isActive = activeId === link.href.replace("#", "");
-                return (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={(e) => handleNavClick(e, link.href)}
-                    className={`rounded-2xl px-5 py-4 text-lg font-semibold transition-all duration-300 ${
-                      isActive
-                        ? "bg-white/10 text-white translate-x-2"
-                        : "text-slate-400 hover:bg-white/5 hover:text-white"
-                    }`}
-                  >
-                    {link.label}
-                  </a>
-                );
-              })}
-            </div>
-            
-            <div className="mt-4 flex flex-col gap-3">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 ml-4">Social</span>
-              <div className="flex items-center gap-4 px-4 py-2">
-                {SOCIAL_LINKS.map((social) => {
-                  const Icon = SOCIAL_ICONS[social.icon as keyof typeof SOCIAL_ICONS];
-                  return (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-400"
-                    >
-                      <Icon size={20} />
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-
+          <div className="flex flex-col gap-4">
+            {NAV_LINKS.map((link) => {
+              const isActive = activeId === link.href.replace("#", "");
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={`flex items-center gap-3 rounded-2xl px-5 py-4 text-lg font-semibold transition-all duration-300 ${
+                    isActive
+                      ? "bg-white/10 text-white"
+                      : "text-slate-400 hover:bg-white/5 hover:text-white"
+                  }`}
+                >
+                  {isActive && (
+                    <span className="h-2 w-2 rounded-full bg-white shadow-[0_0_8px_white]" />
+                  )}
+                  {link.label}
+                </a>
+              );
+            })}
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, "#contact")}
-              className="btn-primary mt-8 text-center text-lg"
+              className="mt-4 flex items-center justify-center gap-2 rounded-2xl bg-white text-[#06060e] py-4 text-center text-lg font-bold transition-transform hover:scale-[1.02]"
             >
-              Mulai Proyek
+              <HiPhone size={20} />
+              Contact
             </a>
           </div>
         </div>
