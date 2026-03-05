@@ -85,40 +85,55 @@ export interface PortfolioItem {
   category: string;
   techStack: string[];
   gradient: string;
+  image: string;
+  demoLink: string;
+  githubLink: string;
 }
 
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
     title: "EduPay — Sistem SPP Digital",
     description:
-      "Platform pembayaran SPP sekolah dengan dashboard admin, laporan keuangan otomatis, dan notifikasi pembayaran.",
-    category: "Web App",
+      "Solusi cerdas untuk transparansi keuangan sekolah. Dilengkapi dengan auto-billing, payment gateway Midtrans, dan laporan real-time untuk mempermudah administrasi.",
+    category: "Web Application",
     techStack: ["Next.js", "PostgreSQL", "Prisma", "Midtrans"],
-    gradient: "from-indigo-500/20 to-cyan-500/20",
+    gradient: "from-indigo-600/40 via-cyan-500/10 to-transparent",
+    image: "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=800",
+    demoLink: "https://demo.edupay.com",
+    githubLink: "https://github.com/5march/edupay",
   },
   {
     title: "TaskFlow — Project Management",
     description:
-      "Aplikasi manajemen proyek kolaboratif dengan kanban board, time tracking, dan team management.",
-    category: "Web App",
+      "Tingkatkan produktivitas tim dengan manajemen tugas berbasis Kanban. Visualisasikan alur kerja dan selesaikan proyek lebih cepat dengan TaskFlow.",
+    category: "SaaS Platform",
     techStack: ["React", "Node.js", "MongoDB", "Socket.io"],
-    gradient: "from-purple-500/20 to-pink-500/20",
+    gradient: "from-purple-600/40 via-pink-500/10 to-transparent",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    demoLink: "https://taskflow.studio",
+    githubLink: "https://github.com/5march/taskflow",
   },
   {
-    title: "ShopVerse — E-Commerce Platform",
+    title: "ShopVerse — E-Commerce Hub",
     description:
-      "Marketplace online dengan sistem pembayaran terintegrasi, manajemen stok, dan analitik penjualan.",
+      "Bangun kerajaan bisnis online Anda sekarang. ShopVerse menawarkan pengalaman belanja yang seamless dengan integrasi Stripe dan performa kilat lewat Redis.",
     category: "E-Commerce",
     techStack: ["Next.js", "Supabase", "Stripe", "Redis"],
-    gradient: "from-emerald-500/20 to-teal-500/20",
+    gradient: "from-emerald-600/40 via-teal-500/10 to-transparent",
+    image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=800",
+    demoLink: "https://shopverse.id",
+    githubLink: "https://github.com/5march/shopverse",
   },
   {
-    title: "TechCorp — Company Profile",
+    title: "TechCorp — Enterprise Identity",
     description:
-      "Website profil perusahaan teknologi dengan animasi interaktif, blog CMS, dan multi-language support.",
-    category: "Company Profile",
+      "Representasi digital yang elegan untuk bisnis kelas dunia. Company profile dengan desain futuristik, animasi interaktif, dan performa web core vitals yang sempurna.",
+    category: "Identity Design",
     techStack: ["Next.js", "Sanity CMS", "Framer Motion", "i18n"],
-    gradient: "from-orange-500/20 to-amber-500/20",
+    gradient: "from-orange-600/40 via-amber-500/10 to-transparent",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
+    demoLink: "https://techcorp.com",
+    githubLink: "https://github.com/5march/techcorp",
   },
 ];
 
