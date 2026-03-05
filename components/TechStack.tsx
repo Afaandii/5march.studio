@@ -38,88 +38,76 @@ const TECH_ICONS: Record<string, any> = {
   "VS Code": VscCode
 };
 
-const CATEGORIES = ["Frontend", "Backend", "Database", "Tools"] as const;
-
-const CATEGORY_COLORS: Record<string, { accent: string; glow: string }> = {
-  Frontend: { accent: "indigo-500", glow: "rgba(99, 102, 241, 0.15)" },
-  Backend: { accent: "cyan-500", glow: "rgba(6, 182, 212, 0.15)" },
-  Database: { accent: "emerald-500", glow: "rgba(16, 185, 129, 0.15)" },
-  Tools: { accent: "amber-500", glow: "rgba(245, 158, 11, 0.15)" },
-};
-
-function TechBadge({ name, category }: { name: string, category: string }) {
+function TechCard({ name, index }: { name: string; index: number }) {
   const Icon = TECH_ICONS[name] || HiOutlineCommandLine;
-  const colors = CATEGORY_COLORS[category];
 
   return (
-    <div className="group relative flex flex-col items-center gap-3">
-      <div className={`relative flex h-16 w-16 items-center justify-center rounded-2xl bg-white/[0.03] border border-white/5 transition-all duration-500 group-hover:-translate-y-2 group-hover:bg-white/[0.06] group-hover:border-white/10 group-hover:shadow-[0_10px_30px_${colors.glow}]`}>
-        <Icon className={`text-2xl text-slate-400 transition-colors duration-500 group-hover:text-white`} />
-        {/* Hover Border Glow */}
-        <div className={`absolute -inset-[1px] rounded-[inherit] opacity-0 group-hover:opacity-100 transition-opacity duration-500 border border-${colors.accent}/30 pointer-events-none`} />
-      </div>
-      <span className="text-[11px] font-bold uppercase tracking-widest text-slate-500 transition-colors group-hover:text-slate-200">
-        {name}
-      </span>
-    </div>
-  );
-}
-
-function CategorySection({ category }: { category: string }) {
-  const ref = useScrollReveal(0.15);
-  const techs = TECH_STACK.filter((t) => t.category === category);
-  const colors = CATEGORY_COLORS[category];
-
-  return (
-    <div ref={ref} className="reveal flex flex-col gap-10">
-      <div className="flex items-center gap-4">
-        <h3 className="text-xl font-black uppercase tracking-[0.3em] text-white">
-          {category}
-        </h3>
-        <div className={`h-px flex-grow bg-gradient-to-r from-${colors.accent}/30 to-transparent`} />
-      </div>
+    <div 
+      className="group relative flex aspect-square items-center justify-center rounded-2xl bg-white/[0.03] border border-white/5 transition-all duration-300 hover:bg-white/[0.06] hover:border-white/20"
+      title={name}
+    >
+      <Icon className="text-3xl text-slate-400 grayscale transition-all duration-300 group-hover:text-white group-hover:grayscale-0 group-hover:scale-110" />
       
-      <div className="grid grid-cols-3 gap-y-10 gap-x-6 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-6">
-        {techs.map((tech) => (
-          <TechBadge key={tech.name} name={tech.name} category={category} />
-        ))}
+      {/* Tooltip on Hover */}
+      <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 rounded-md bg-white px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-black opacity-0 transition-opacity group-hover:opacity-100 pointer-events-none z-20">
+        {name}
+        <div className="absolute -top-1 left-1/2 -translate-x-1/2 border-l-4 border-r-4 border-b-4 border-l-transparent border-r-transparent border-b-white" />
       </div>
+
+      {/* Glow Effect */}
+      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[inset_0_0_20px_rgba(255,255,255,0.05)] pointer-events-none" />
     </div>
   );
 }
 
 export default function TechStack() {
   const headerRef = useScrollReveal();
+  const gridRef = useScrollReveal(0.1);
 
   return (
     <section id="techstack" className="relative px-6 py-32 md:py-48 bg-[#06060e]">
-      <div className="gradient-orb gradient-orb-purple absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 opacity-[0.03]" />
+      {/* Decorative Orbs */}
+      <div className="gradient-orb gradient-orb-purple absolute top-0 left-1/4 h-[500px] w-[500px] opacity-[0.05] blur-[120px]" />
+      <div className="gradient-orb gradient-orb-primary absolute bottom-0 right-1/4 h-[500px] w-[500px] opacity-[0.03] blur-[120px]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl">
+      <div className="relative z-10 mx-auto max-w-5xl">
         {/* Header */}
-        <div ref={headerRef} className="reveal mb-32 text-center">
+        <div ref={headerRef} className="reveal mb-24 text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-md">
-            <span className="h-1.5 w-1.5 rounded-full bg-purple-500" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-purple-300">
+            <span className="h-1.5 w-1.5 rounded-full bg-cyan-500 shadow-[0_0_8px_cyan]" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-300">
               TRUSTED TECHNOLOGY
             </span>
           </div>
-          <h2 className="mb-8 text-4xl font-black tracking-tight text-white sm:text-6xl md:text-7xl">
-            Our <span className="gradient-text font-serif italic">Arsenal.</span>
+          <h2 className="mb-8 text-5xl font-black tracking-tighter text-white sm:text-7xl">
+            Our <span className="bg-gradient-to-r from-white via-white to-white/30 bg-clip-text text-transparent italic">Tech Stack.</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg font-medium tracking-tight text-slate-400">
-            Kami hanya menggunakan framework dan tools paling mutakhir untuk 
-            memastikan performa, keamanan, dan skalabilitas ekosistem digital Anda.
+            Stack teknologi modern yang kami gunakan untuk membangun solusi 
+            perangkat lunak yang skalabel, aman, dan performan.
           </p>
         </div>
 
-        {/* Categories Section */}
-        <div className="flex flex-col gap-24">
-          {CATEGORIES.map((category) => (
-            <CategorySection key={category} category={category} />
+        {/* Simplified Unified Grid */}
+        <div 
+          ref={gridRef} 
+          className="reveal grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8"
+        >
+          {TECH_STACK.map((tech, index) => (
+            <TechCard key={tech.name} name={tech.name} index={index} />
           ))}
+        </div>
+        
+        {/* Bottom indicator */}
+        <div className="mt-20 flex justify-center">
+          <div className="flex items-center gap-4 py-4 px-8 rounded-full border border-white/5 bg-white/[0.02] backdrop-blur-sm">
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">Industry Standard Tools</span>
+            <div className="h-1 w-1 rounded-full bg-slate-700" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">Modern Frameworks</span>
+          </div>
         </div>
       </div>
     </section>
   );
 }
+

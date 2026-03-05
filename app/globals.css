@@ -100,6 +100,46 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
+.glass-holographic {
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.02) 50%,
+      rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-holographic::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(125deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.05) 30%,
+      rgba(255, 255, 255, 0.1) 40%,
+      rgba(255, 255, 255, 0.05) 50%,
+      transparent 100%);
+  transform: translateX(-100%);
+  transition: transform 0.8s ease;
+}
+
+.glass-holographic:hover::after {
+  transform: translateX(100%);
+}
+
+.holographic-glow {
+  position: absolute;
+  filter: blur(60px);
+  opacity: 0.2;
+  transition: opacity 0.5s ease;
+}
+
+.glass-card:hover .holographic-glow {
+  opacity: 0.4;
+}
+
 /* ===== GRADIENT TEXT ===== */
 .gradient-text {
   background: linear-gradient(135deg, #818cf8 0%, #06b6d4 50%, #a78bfa 100%);
