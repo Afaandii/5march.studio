@@ -11,42 +11,42 @@ function ServiceCard({ service, index }: { service: (typeof SERVICES)[number]; i
   return (
     <div
       ref={ref}
-      className="reveal glass-card glass-card-hover group relative flex h-full flex-col overflow-hidden p-8"
+      className="reveal group relative flex flex-col bg-[#0d0d12] rounded-[1.5rem] border border-white/[0.03] p-10 transition-all duration-500 hover:border-white/10 hover:shadow-2xl hover:shadow-black/60"
       style={{ transitionDelay: `${index * 0.1}s` }}
     >
-      {/* Dynamic Background Glow */}
-      <div className={`absolute -right-12 -top-12 h-40 w-40 rounded-full bg-gradient-to-br ${service.gradient} opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-20`} />
+      {/* Subtle Accent Glow */}
+      <div className={`absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gradient-to-br ${service.gradient} opacity-0 blur-[100px] transition-opacity duration-700 group-hover:opacity-10`} />
 
-      {/* Modern Icon Box */}
-      <div className={`relative mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${service.gradient} p-[1px]`}>
-        <div className="flex h-full w-full items-center justify-center rounded-[15px] bg-[#0d0d1a] transition-all duration-300 group-hover:bg-transparent">
-          <Icon className={`text-3xl text-white group-hover:scale-110 transition-transform duration-300`} />
+      {/* Neat Icon Presentation */}
+      <div className={`relative mb-10 flex h-14 w-14 items-center justify-center rounded-xl bg-white/[0.03] border border-white/[0.05] transition-all duration-500 group-hover:scale-110 group-hover:bg-white/[0.08]`}>
+        <Icon className="text-2xl text-white/80 group-hover:text-white transition-colors" />
+      </div>
+
+      {/* Content Area */}
+      <div className="flex flex-col flex-grow">
+        <h3 className="mb-4 text-xl font-bold tracking-tight text-white group-hover:text-indigo-400 transition-colors">
+          {service.title}
+        </h3>
+        <p className="mb-10 text-[15px] font-medium leading-relaxed text-slate-400">
+          {service.description}
+        </p>
+
+        {/* Improved Feature List */}
+        <div className="mt-auto space-y-4">
+          {service.features.map((feature) => (
+            <div key={feature} className="flex items-center gap-3">
+              <HiCheckCircle className="text-indigo-500/60 group-hover:text-indigo-400 transition-colors" size={16} />
+              <span className="text-[11px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-300 transition-colors">
+                {feature}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Content */}
-      <h3 className="mb-4 text-2xl font-bold tracking-tight text-white">
-        {service.title}
-      </h3>
-      <p className="mb-8 flex-grow text-[15px] leading-relaxed text-slate-400">
-        {service.description}
-      </p>
-
-      {/* Modern Checklist */}
-      <div className="mt-auto space-y-3">
-        {service.features.map((feature) => (
-          <div key={feature} className="flex items-center gap-3">
-            <HiCheckCircle className="text-emerald-400/80" size={18} />
-            <span className="text-xs font-semibold uppercase tracking-wider text-slate-300">
-              {feature}
-            </span>
-          </div>
-        ))}
-      </div>
-
-      {/* Decorative Index */}
-      <div className="absolute top-6 right-8 text-4xl font-black text-white/5 group-hover:text-white/10 transition-colors">
-        0{index + 1}
+      {/* Clean Numbering */}
+      <div className="absolute top-8 right-10 text-xs font-black text-slate-800 tracking-widest group-hover:text-slate-700 transition-colors">
+        #{index + 1}
       </div>
     </div>
   );
@@ -56,30 +56,30 @@ export default function Services() {
   const headerRef = useScrollReveal();
 
   return (
-    <section id="services" className="relative px-6 py-32 md:py-48 bg-[#06060e]">
-      {/* Decorative Orbs */}
-      <div className="gradient-orb gradient-orb-primary absolute left-0 top-0 h-[800px] w-[800px] -translate-x-1/2 opacity-[0.05]" />
+    <section id="services" className="relative py-28 md:py-40 bg-[#030712] overflow-hidden">
+      {/* Background decoration */}
+      <div className="gradient-orb gradient-orb-primary absolute -left-40 top-0 h-[600px] w-[600px] opacity-[0.02] blur-[120px]" />
       
-      <div className="relative z-10 mx-auto max-w-7xl">
-        {/* Header Section */}
-        <div ref={headerRef} className="reveal mb-24 max-w-3xl">
+      <div className="relative z-10 mx-auto max-w-7xl px-8 lg:px-16">
+        {/* Modern & Neat Header */}
+        <div ref={headerRef} className="reveal mb-24 max-w-2xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-md">
             <span className="h-1.5 w-1.5 rounded-full bg-indigo-500 shadow-[0_0_8px_indigo]" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-indigo-300">
-              SERVICES & SOLUTIONS
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-indigo-300">
+              OUR EXPERTISE
             </span>
           </div>
-          <h2 className="mb-8 text-4xl font-black tracking-tight text-white sm:text-6xl md:text-7xl">
+          <h2 className="mb-8 text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
             Solusi Digital yang <br className="hidden sm:block" />
-            <span className="gradient-text">Terintegrasi.</span>
+            <span className="bg-gradient-to-r from-white via-white to-white/40 bg-clip-text text-transparent italic">Berkelas.</span>
           </h2>
-          <p className="text-lg font-medium leading-relaxed text-slate-400 md:text-xl">
-            Dari simple landing page hingga enterprise-level web applications dengan integrasi AI, 
-            Payment Gateway, dan Real-time Database.
+          <p className="text-lg font-medium leading-relaxed text-slate-500">
+            Kami menghadirkan rekayasa perangkat lunak yang presisi dengan fokus pada 
+            skalabillitas, performa tinggi, dan pengalaman pengguna yang luar biasa.
           </p>
         </div>
 
-        {/* Improved Grid */}
+        {/* Neat Service Grid */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((service, index) => (
             <ServiceCard key={service.title} service={service} index={index} />
@@ -89,3 +89,4 @@ export default function Services() {
     </section>
   );
 }
+
