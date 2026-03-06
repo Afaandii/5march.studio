@@ -22,11 +22,6 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="lg:col-span-1">
             <div className="mb-8 flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-500 p-[1px]">
-                 <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-[#06060e] text-sm font-black text-white">
-                    5m
-                 </div>
-              </div>
               <span className="text-xl font-black text-white tracking-tighter">
                 5march<span className="gradient-text">.studio</span>
               </span>
@@ -102,7 +97,7 @@ export default function Footer() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.03] border border-white/5 text-slate-400">
                   <MdLocationOn size={20} />
                 </div>
-                <span className="text-[15px] font-semibold text-slate-400">Yogyakarta, Indonesia</span>
+                <span className="text-[15px] font-semibold text-slate-400">Sidoarjo, Indonesia</span>
               </li>
             </ul>
           </div>
@@ -113,7 +108,7 @@ export default function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <p className="text-xs font-bold uppercase tracking-widest text-slate-600">
-            © {currentYear} 5MARCH.STUDIO — BEYOND DIGITAL.
+            © {currentYear} 5MARCH.STUDIO
           </p>
           <div className="flex items-center gap-6">
             <a href="#" className="text-xs font-bold uppercase tracking-widest text-slate-600 hover:text-white transition-colors">Privacy</a>
