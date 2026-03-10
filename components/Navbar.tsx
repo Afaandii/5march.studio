@@ -43,9 +43,9 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-[100] px-6 py-6">
       <div
-        className={`mx-auto flex max-w-7xl items-center justify-between px-8 py-3 transition-all duration-500 rounded-[2rem] border border-white/10 ${
+        className={`mx-auto flex max-w-7xl items-center justify-between px-8 py-3 transition-all duration-500 border border-white/10 ${
           isScrolled
-            ? "bg-[#06060e]/70 backdrop-blur-2xl shadow-2xl"
+            ? "bg-black/80 backdrop-blur-2xl shadow-2xl"
             : "bg-white/[0.03] backdrop-blur-md"
         }`}
       >
@@ -53,10 +53,10 @@ export default function Navbar() {
         <a
           href="#home"
           onClick={(e) => handleNavClick(e, "#home")}
-          className="group flex items-center gap-3 text-xl font-bold"
+          className="group flex items-center gap-3 text-xl font-bold uppercase tracking-tighter"
         >
-          <span className="text-white tracking-tight hidden sm:block">
-            5march<span className="gradient-text">.studio</span>
+          <span className="text-white hidden sm:block">
+            5march<span className="text-silver">.studio</span>
           </span>
         </a>
 
@@ -69,13 +69,10 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className={`flex items-center gap-2 text-sm font-semibold transition-all duration-300 ${
-                  isActive ? "text-white" : "text-slate-400 hover:text-slate-200"
+                className={`flex items-center gap-2 text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
+                  isActive ? "text-white" : "text-charcoal hover:text-silver"
                 }`}
               >
-                {isActive && (
-                  <span className="h-1.5 w-1.5 rounded-full bg-white shadow-[0_0_8px_white]" />
-                )}
                 {link.label}
               </a>
             );
@@ -87,7 +84,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, "#contact")}
-            className="flex items-center gap-2 rounded-full border border-blue-600 bg-blue-600 px-6 py-2.5 text-sm font-bold text-white transition-all hover:bg-blue-600/40 hover:border-blue-600/40"
+            className="btn-primary flex items-center gap-2 !px-6 !py-2.5 !text-xs"
           >
             Get Started
           </a>
@@ -96,7 +93,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white transition-colors hover:bg-white/10 md:hidden"
+          className="flex h-10 w-10 items-center justify-center border border-white/10 bg-white/5 text-white transition-colors hover:bg-white/10 md:hidden"
           aria-label="Toggle menu"
         >
           {isMobileOpen ? <HiX size={24} /> : <HiMenuAlt3 size={24} />}
@@ -110,11 +107,11 @@ export default function Navbar() {
         }`}
       >
         <div
-          className="absolute inset-0 bg-black/80 backdrop-blur-lg"
+          className="absolute inset-0 bg-black/90 backdrop-blur-lg"
           onClick={() => setIsMobileOpen(false)}
         />
         <div
-          className={`absolute right-4 top-24 w-[calc(100%-2rem)] max-w-sm rounded-3xl border border-white/10 bg-[#06060e]/95 p-8 shadow-2xl transition-all duration-500 ${
+          className={`absolute right-4 top-24 w-[calc(100%-2rem)] max-w-sm border border-white/10 bg-black p-8 shadow-2xl transition-all duration-500 ${
             isMobileOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
           }`}
         >
@@ -126,15 +123,12 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`flex items-center gap-3 rounded-2xl px-5 py-4 text-lg font-semibold transition-all duration-300 ${
+                  className={`flex items-center gap-3 px-5 py-4 text-sm font-bold uppercase tracking-widest transition-all duration-300 ${
                     isActive
                       ? "bg-white/10 text-white"
-                      : "text-slate-400 hover:bg-white/5 hover:text-white"
+                      : "text-charcoal hover:bg-white/5 hover:text-white"
                   }`}
                 >
-                  {isActive && (
-                    <span className="h-2 w-2 rounded-full bg-white shadow-[0_0_8px_white]" />
-                  )}
                   {link.label}
                 </a>
               );
@@ -142,7 +136,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, "#contact")}
-              className="mt-4 flex items-center justify-center gap-2 rounded-2xl bg-white text-[#06060e] py-4 text-center text-lg font-bold transition-transform hover:scale-[1.02]"
+              className="btn-primary mt-4 flex items-center justify-center gap-2 !py-4 !text-sm"
             >
               <HiPhone size={20} />
               Contact

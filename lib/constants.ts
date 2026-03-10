@@ -34,7 +34,7 @@ export const SERVICES: Service[] = [
     description:
       "Website landing page yang memukau dengan desain modern, responsif, dan dioptimasi untuk konversi tinggi.",
     features: ["Responsive Design", "SEO Optimized", "Fast Loading", "Modern UI"],
-    gradient: "from-violet-500 to-indigo-500",
+    gradient: "bg-graphite",
   },
   {
     icon: HiBuildingOffice,
@@ -42,7 +42,7 @@ export const SERVICES: Service[] = [
     description:
       "Website profil perusahaan profesional yang merepresentasikan brand dan nilai bisnis Anda secara digital.",
     features: ["Multi-page", "CMS Integration", "Contact Form", "Analytics"],
-    gradient: "from-cyan-500 to-blue-500",
+    gradient: "bg-charcoal",
   },
   {
     icon: HiBolt,
@@ -50,7 +50,7 @@ export const SERVICES: Service[] = [
     description:
       "Platform toko online lengkap dengan sistem pembayaran, manajemen produk, dan pengalaman belanja yang seamless.",
     features: ["Payment Gateway", "Inventory System", "Order Tracking", "Dashboard"],
-    gradient: "from-emerald-500 to-teal-500",
+    gradient: "bg-graphite",
   },
   {
     icon: HiCreditCard,
@@ -58,7 +58,7 @@ export const SERVICES: Service[] = [
     description:
       "Aplikasi web untuk manajemen pembayaran SPP sekolah dengan laporan otomatis dan notifikasi realtime.",
     features: ["Auto Invoice", "Payment History", "Report Export", "Notification"],
-    gradient: "from-amber-500 to-orange-500",
+    gradient: "bg-charcoal",
   },
   {
     icon: HiClipboardDocumentList,
@@ -66,7 +66,7 @@ export const SERVICES: Service[] = [
     description:
       "Aplikasi manajemen tugas dan proyek kolaboratif dengan fitur realtime, kanban board, dan team management.",
     features: ["Kanban Board", "Team Collab", "Deadline Tracker", "Progress Report"],
-    gradient: "from-pink-500 to-rose-500",
+    gradient: "bg-graphite",
   },
   {
     icon: HiCodeBracket,
@@ -74,7 +74,7 @@ export const SERVICES: Service[] = [
     description:
       "Pengembangan API kustom dan integrasi sistem yang menghubungkan berbagai layanan untuk efisiensi bisnis.",
     features: ["RESTful API", "Database Design", "3rd Party Integration", "Documentation"],
-    gradient: "from-purple-500 to-fuchsia-500",
+    gradient: "bg-charcoal",
   },
 ];
 
@@ -97,7 +97,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "Solusi cerdas untuk transparansi keuangan sekolah. Dilengkapi dengan auto-billing, payment gateway Midtrans, dan laporan real-time untuk mempermudah administrasi.",
     category: "Web Application",
     techStack: ["Next.js", "PostgreSQL", "Prisma", "Midtrans"],
-    gradient: "from-indigo-600/40 via-cyan-500/10 to-transparent",
+    gradient: "from-graphite/40 via-charcoal/10 to-transparent",
     image: "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=800",
     demoLink: "https://demo.edupay.com",
     githubLink: "https://github.com/5march/edupay",
@@ -108,7 +108,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "Tingkatkan produktivitas tim dengan manajemen tugas berbasis Kanban. Visualisasikan alur kerja dan selesaikan proyek lebih cepat dengan TaskFlow.",
     category: "SaaS Platform",
     techStack: ["React", "Node.js", "MongoDB", "Socket.io"],
-    gradient: "from-purple-600/40 via-pink-500/10 to-transparent",
+    gradient: "from-graphite/40 via-charcoal/10 to-transparent",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
     demoLink: "https://taskflow.studio",
     githubLink: "https://github.com/5march/taskflow",
@@ -119,7 +119,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "Bangun kerajaan bisnis online Anda sekarang. ShopVerse menawarkan pengalaman belanja yang seamless dengan integrasi Stripe dan performa kilat lewat Redis.",
     category: "E-Commerce",
     techStack: ["Next.js", "Supabase", "Stripe", "Redis"],
-    gradient: "from-emerald-600/40 via-teal-500/10 to-transparent",
+    gradient: "from-graphite/40 via-charcoal/10 to-transparent",
     image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=800",
     demoLink: "https://shopverse.id",
     githubLink: "https://github.com/5march/shopverse",
@@ -130,7 +130,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "Representasi digital yang elegan untuk bisnis kelas dunia. Company profile dengan desain futuristik, animasi interaktif, dan performa web core vitals yang sempurna.",
     category: "Identity Design",
     techStack: ["Next.js", "Sanity CMS", "Framer Motion", "i18n"],
-    gradient: "from-orange-600/40 via-amber-500/10 to-transparent",
+    gradient: "from-graphite/40 via-charcoal/10 to-transparent",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
     demoLink: "https://techcorp.com",
     githubLink: "https://github.com/5march/techcorp",
