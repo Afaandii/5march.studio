@@ -33,7 +33,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-[100] px-6 py-6">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-3 transition-all duration-500 border border-white/10 bg-black/50 backdrop-blur-2xl shadow-2xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-3 transition-all duration-500 border border-white/10 bg-black/80 backdrop-blur-2xl shadow-2xl">
         {/* Logo */}
         <a
           href="#home"

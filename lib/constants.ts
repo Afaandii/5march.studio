@@ -30,51 +30,27 @@ export interface Service {
 export const SERVICES: Service[] = [
   {
     icon: HiRocketLaunch,
-    title: "Landing Page",
+    title: "High-Conversion Web Apps",
     description:
-      "Website landing page yang memukau dengan desain modern, responsif, dan dioptimasi untuk konversi tinggi.",
+      "Website landing page dan company profile yang memukau dengan desain modern, responsif, dan dioptimasi untuk brand identity serta konversi tinggi.",
     features: ["Responsive Design", "SEO Optimized", "Fast Loading", "Modern UI"],
     gradient: "bg-graphite",
   },
   {
-    icon: HiBuildingOffice,
-    title: "Company Profile",
+    icon: HiCodeBracket,
+    title: "Enterprise Systems",
     description:
-      "Website profil perusahaan profesional yang merepresentasikan brand dan nilai bisnis Anda secara digital.",
-    features: ["Multi-page", "CMS Integration", "Contact Form", "Analytics"],
+      "Aplikasi web kompleks untuk manajemen pembayaran, sistem internal sekolah/bisnis, serta pengembangan API kustom yang skalabel.",
+    features: ["Custom Architecture", "Security First", "API Integration", "Automated Reports"],
     gradient: "bg-charcoal",
   },
   {
     icon: HiBolt,
-    title: "E-Commerce",
+    title: "Digital Products",
     description:
-      "Platform toko online lengkap dengan sistem pembayaran, manajemen produk, dan pengalaman belanja yang seamless.",
-    features: ["Payment Gateway", "Inventory System", "Order Tracking", "Dashboard"],
+      "Platform e-commerce lengkap dan solusi SaaS (Software as a Service) dengan sistem pembayaran terintegrasi dan pengalaman belanja yang seamless.",
+    features: ["Payment Gateway", "Inventory System", "User Dashboard", "Real-time Updates"],
     gradient: "bg-graphite",
-  },
-  {
-    icon: HiCreditCard,
-    title: "Sistem Pembayaran SPP",
-    description:
-      "Aplikasi web untuk manajemen pembayaran SPP sekolah dengan laporan otomatis dan notifikasi realtime.",
-    features: ["Auto Invoice", "Payment History", "Report Export", "Notification"],
-    gradient: "bg-charcoal",
-  },
-  {
-    icon: HiClipboardDocumentList,
-    title: "Task Management",
-    description:
-      "Aplikasi manajemen tugas dan proyek kolaboratif dengan fitur realtime, kanban board, dan team management.",
-    features: ["Kanban Board", "Team Collab", "Deadline Tracker", "Progress Report"],
-    gradient: "bg-graphite",
-  },
-  {
-    icon: HiCodeBracket,
-    title: "Custom API & Integration",
-    description:
-      "Pengembangan API kustom dan integrasi sistem yang menghubungkan berbagai layanan untuk efisiensi bisnis.",
-    features: ["RESTful API", "Database Design", "3rd Party Integration", "Documentation"],
-    gradient: "bg-charcoal",
   },
 ];
 
@@ -144,30 +120,14 @@ export interface TechItem {
 }
 
 export const TECH_STACK: TechItem[] = [
-  { name: "React", category: "Frontend" },
   { name: "Next.js", category: "Frontend" },
   { name: "TypeScript", category: "Frontend" },
-  { name: "Tailwind CSS", category: "Frontend" },
   { name: "Framer Motion", category: "Frontend" },
-  { name: "HTML5/CSS3", category: "Frontend" },
   { name: "Node.js", category: "Backend" },
-  { name: "Express.js", category: "Backend" },
   { name: "Go (Golang)", category: "Backend" },
-  { name: "REST API", category: "Backend" },
-  { name: "GraphQL", category: "Backend" },
-  { name: "WebSocket", category: "Backend" },
   { name: "PostgreSQL", category: "Database" },
-  { name: "MongoDB", category: "Database" },
-  { name: "MySQL", category: "Database" },
-  { name: "Redis", category: "Database" },
   { name: "Supabase", category: "Database" },
-  { name: "Prisma", category: "Database" },
-  { name: "Git", category: "Tools" },
   { name: "Docker", category: "Tools" },
-  { name: "Vercel", category: "Tools" },
-  { name: "Figma", category: "Tools" },
-  { name: "Postman", category: "Tools" },
-  { name: "VS Code", category: "Tools" },
 ];
 
 // ===== TESTIMONIALS =====

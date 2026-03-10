@@ -1,195 +1,221 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme inline {
-    --color-background: #000000;
-    --color-foreground: #ffffff;
-
-    /* Color Palette from Image */
-    --color-graphite: #303030;
-    --color-charcoal: #595959;
-    --color-silver: #b5b5b5;
-    --color-alabaster: #e0e0e0;
-
-    --color-primary: #ffffff;
-    --color-primary-light: #e0e0e0;
-    --color-primary-dark: #b5b5b5;
-
-    --color-surface: #111111;
-    --color-surface-hover: #1a1a1a;
-    --color-glass-border: rgba(255, 255, 255, 0.1);
-    --color-glass-border-hover: rgba(255, 255, 255, 0.2);
-
-    --color-text-primary: #ffffff;
-    --color-text-secondary: #b5b5b5;
-    --color-text-muted: #595959;
-
-    --font-sans: "Inter", sans-serif;
-    --font-mono: "JetBrains Mono", monospace;
+  --color-background: #000000;
+  --color-foreground: #FFFFFF;
+  
+  /* Color Palette from Image */
+  --color-graphite: #303030;
+  --color-charcoal: #595959;
+  --color-silver: #B5B5B5;
+  --color-alabaster: #E0E0E0;
+  
+  --color-primary: #FFFFFF;
+  --color-primary-light: #E0E0E0;
+  --color-primary-dark: #B5B5B5;
+  
+  --color-surface: #111111;
+  --color-surface-hover: #1a1a1a;
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-glass-border-hover: rgba(255, 255, 255, 0.2);
+  
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #B5B5B5;
+  --color-text-muted: #595959;
+  
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 /* ===== BASE ===== */
 @layer base {
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    html {
-        scroll-behavior: smooth;
-        scrollbar-width: thin;
-        scrollbar-color: #303030 transparent;
-    }
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #303030 transparent;
+  }
 
-    body {
-        background-color: #000000 !important;
-        color: #ffffff;
-        font-family: "Inter", sans-serif;
-        overflow-x: hidden;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        min-height: 100vh;
-    }
+  body {
+    background-color: #000000 !important;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
 }
 
 ::selection {
-    background: #ffffff;
-    color: #000000;
+  background: #FFFFFF;
+  color: #000000;
 }
 
 ::-webkit-scrollbar {
-    width: 6px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #303030;
-    border-radius: 3px;
+  background: #303030;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #595959;
+  background: #595959;
 }
 
 /* ===== COMPONENTS ===== */
 .glass-card {
-    background: #111111;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0; /* Square/Minimalist look */
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
 }
 
 .glass-card-hover {
-    transition: all 0.4s ease;
+  transition: all 0.3s ease;
 }
 
 .glass-card-hover:hover {
-    background: #1a1a1a;
-    border-color: rgba(255, 255, 255, 0.3);
-    transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .glass-navbar {
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* ===== NO GRADIENTS ===== */
 .gradient-text {
-    color: #ffffff;
-    background: none;
-    -webkit-text-fill-color: initial;
+  color: #FFFFFF;
+  background: none;
+  -webkit-text-fill-color: initial;
 }
 
 .gradient-text-alt {
-    color: #b5b5b5;
-    background: none;
-    -webkit-text-fill-color: initial;
+  color: #B5B5B5;
+  background: none;
+  -webkit-text-fill-color: initial;
 }
 
 .glow-border::before {
-    display: none;
+  display: none;
 }
 
 .gradient-orb {
-    display: none;
+  display: none;
 }
 
-/* ===== ANIMATIONS (Simplified) ===== */
-@keyframes fade-in-up {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* ===== ANIMATIONS (Subdued) ===== */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out forwards;
+}
+
+/* Disable the old loud animations */
 .animate-fade-in-up {
-    animation: fade-in-up 0.6s ease-out forwards;
+  animation: slide-up 0.6s ease-out forwards;
 }
 
 /* ===== BUTTONS ===== */
 .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: #ffffff;
-    color: #000000;
-    font-weight: 700;
-    padding: 14px 32px;
-    border: 1px solid #ffffff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #FFFFFF;
+  color: #000000;
+  font-weight: 700;
+  padding: 14px 32px;
+  border: 1px solid #FFFFFF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .btn-primary:hover {
-    background: transparent;
-    color: #ffffff;
-    transform: translateY(-2px);
+  background: #000000;
+  color: #FFFFFF;
 }
 
 .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: transparent;
-    color: #ffffff;
-    font-weight: 600;
-    padding: 14px 32px;
-    border: 1px solid #303030;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 14px 32px;
+  border: 1px solid #303030;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .btn-secondary:hover {
-    background: #303030;
-    border-color: #ffffff;
-    transform: translateY(-2px);
+  border-color: #FFFFFF;
 }
 
-/* ===== REVEAL ===== */
+/* ===== REVEAL (Subdued) ===== */
 .reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease-out;
 }
 
 .reveal.revealed {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== NOISE TEXTURE OVERLAY ===== */
+.noise-overlay::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.01; /* Even more subtle */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  z-index: 9999;
+}
+
+/* ===== MARQUEE ANIMATION ===== */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 60s linear infinite; /* Slower, more professional */
 }
