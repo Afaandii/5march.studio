@@ -218,6 +218,6 @@ export const STATS = [
 export const SOCIAL_LINKS = [
   { label: "GitHub", href: "https://github.com/5march", icon: "github" },
   { label: "Instagram", href: "https://instagram.com/5march.studio", icon: "instagram" },
-  { label: "WhatsApp", href: "https://wa.me/6281234567890", icon: "whatsapp" },
+  { label: "WhatsApp", href: "/api/contact/whatsapp", icon: "whatsapp" },
   { label: "Email", href: "mailto:hello@5march.studio", icon: "email" },
 ] as const;
