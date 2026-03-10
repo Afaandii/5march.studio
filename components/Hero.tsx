@@ -60,7 +60,7 @@ export default function Hero() {
               Check Our Services
               <HiArrowRight className="transition-transform group-hover:translate-x-1" />
             </a>
-            <a href="https://wa.me/6281234567890" target="_blank" className="btn-secondary flex items-center gap-3 px-10 py-5 text-lg">
+            <a href="/api/contact/whatsapp" target="_blank" rel="noopener noreferrer" className="btn-secondary flex items-center gap-3 px-10 py-5 text-lg">
               Let's Talk
               <FaWhatsapp className="text-[#25D366]" size={22} />
             </a>
