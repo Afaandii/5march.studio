@@ -1,25 +1,16 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { NAV_LINKS } from "@/lib/constants";
 import { useScrollspy } from "@/hooks/useScrollspy";
 import { HiMenuAlt3, HiX, HiPhone } from "react-icons/hi";
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const activeId = useScrollspy(
     NAV_LINKS.map((link) => link.href.replace("#", "")),
-    120
+    120,
   );
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const handleNavClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -37,18 +28,12 @@ export default function Navbar() {
       }
       setIsMobileOpen(false);
     },
-    []
+    [],
   );
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-[100] px-6 py-6">
-      <div
-        className={`mx-auto flex max-w-7xl items-center justify-between px-8 py-3 transition-all duration-500 border border-white/10 ${
-          isScrolled
-            ? "bg-black/80 backdrop-blur-2xl shadow-2xl"
-            : "bg-white/[0.03] backdrop-blur-md"
-        }`}
-      >
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-3 transition-all duration-500 border border-white/10 bg-black/50 backdrop-blur-2xl shadow-2xl">
         {/* Logo */}
         <a
           href="#home"
@@ -112,7 +97,9 @@ export default function Navbar() {
         />
         <div
           className={`absolute right-4 top-24 w-[calc(100%-2rem)] max-w-sm border border-white/10 bg-black p-8 shadow-2xl transition-all duration-500 ${
-            isMobileOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+            isMobileOpen
+              ? "translate-y-0 opacity-100"
+              : "translate-y-4 opacity-0"
           }`}
         >
           <div className="flex flex-col gap-4">
