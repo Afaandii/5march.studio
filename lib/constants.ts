@@ -10,11 +10,10 @@ export const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "Work", href: "#portfolio" },
   { label: "Capabilities", href: "#services" },
-  { label: "Client Thoughts", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ] as const;
 
-// ===== CAPABILITIES (Previously Services) =====
+// ===== CAPABILITIES =====
 export interface Service {
   icon: IconType;
   title: string;
@@ -50,7 +49,7 @@ export const SERVICES: Service[] = [
   },
 ];
 
-// ===== PORTFOLIO (Focused on Results) =====
+// ===== PORTFOLIO =====
 export interface PortfolioItem {
   title: string;
   description: string;
@@ -106,42 +105,6 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
     demoLink: "https://techcorp.com",
     githubLink: "https://github.com/5march/techcorp",
-  },
-];
-
-// ===== TESTIMONIALS =====
-export interface Testimonial {
-  name: string;
-  role: string;
-  company: string;
-  quote: string;
-  avatar: string;
-}
-
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    name: "Ahmad Rizky",
-    role: "Kepala Sekolah",
-    company: "SMA Negeri 1",
-    quote:
-      "Otomatisasi pembayaran dari 5march menghemat waktu staf kami secara signifikan. Hasil yang konkret.",
-    avatar: "AR",
-  },
-  {
-    name: "Siti Nurhaliza",
-    role: "CEO",
-    company: "TechVentura",
-    quote:
-      "Identitas digital baru kami berhasil mendatangkan lebih banyak klien enterprise daripada sebelumnya.",
-    avatar: "SN",
-  },
-  {
-    name: "Budi Santoso",
-    role: "Owner",
-    company: "TokoMaju Online",
-    quote:
-      "Sistem yang dibangun sangat tangguh. Performa e-commerce kami sekarang jauh melampaui kompetitor.",
-    avatar: "BS",
   },
 ];
 
